@@ -68,10 +68,10 @@ final class WelcomeView: UIView {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.height.equalTo(61)
-           
         }
     }
     
+    // метод для создания кнопки
     private func createButton(with title: String) -> UIButton {
         let customButton = UIButton(type: .system)
         customButton.setTitle(title, for: .normal)

@@ -10,7 +10,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
     
     // MARK: - Private UIProperties
-    private let registerView = RegisterView()
+    private let registerView = RegisterView(buttonTitle: "Register")
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
