@@ -12,7 +12,7 @@ final class WelcomeViewController: UIViewController {
     
     // MARK: Private UI Properties
     private let mainView = WelcomeView()
-
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ final class WelcomeViewController: UIViewController {
         mainView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
     }
 }
 

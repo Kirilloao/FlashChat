@@ -11,7 +11,7 @@ final class RegisterViewController: UIViewController {
     
     // MARK: - Private UIProperties
     private let registerView = RegisterView()
-
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +25,4 @@ final class RegisterViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-
 }

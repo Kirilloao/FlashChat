@@ -19,20 +19,14 @@ final class WelcomeView: UIView {
     }()
     
     private lazy var logInButton: UIButton = {
-        var logButton = UIButton(type: .system)
-        logButton.setTitle("Log In", for: .normal)
-        logButton.tintColor = .white
-        logButton.backgroundColor = .systemTeal
-        logButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        var logButton = createButton(with: "Log In")
         return logButton
     }()
     
     private lazy var registerButton: UIButton = {
-        var registerButton = UIButton(type: .system)
-        registerButton.setTitle("Log In", for: .normal)
+        var registerButton = createButton(with: "Register")
         registerButton.tintColor = UIColor(named: "BrandBlue")
         registerButton.backgroundColor = UIColor(named: "BrandLightBlue")
-        registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         return registerButton
     }()
     
@@ -69,11 +63,21 @@ final class WelcomeView: UIView {
         }
         
         logInButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
+            make.top.equalTo(registerButton.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-40)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.height.equalTo(61)
-            make.top.equalTo(registerButton.snp.bottom).offset(8)
+           
         }
+    }
+    
+    private func createButton(with title: String) -> UIButton {
+        let customButton = UIButton(type: .system)
+        customButton.setTitle(title, for: .normal)
+        customButton.tintColor = .white
+        customButton.backgroundColor = .systemTeal
+        customButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        return customButton
     }
 }

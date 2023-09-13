@@ -98,24 +98,24 @@ final class RegisterView: UIView {
     
     // метод для создания view
     private func createView() -> UIView {
-        let view = UIView()
-        view.layer.cornerRadius = 25
-        view.backgroundColor = .white
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.5 // Прозрачность тени
-        view.layer.shadowOffset = CGSize(width: 0, height: 3) // Смещение тени относительно view
-        view.layer.shadowRadius = 2 // Радиус размытия тени
-        return view
+        let customView = UIView()
+        customView.layer.cornerRadius = 25
+        customView.backgroundColor = .white
+        customView.layer.shadowColor = UIColor.black.cgColor
+        customView.layer.shadowOpacity = 0.5 // Прозрачность тени
+        customView.layer.shadowOffset = CGSize(width: 0, height: 3) // Смещение тени относительно view
+        customView.layer.shadowRadius = 2 // Радиус размытия тени
+        return customView
     }
     
     // метод для создания textField
     private func createTextField(with placeholder: String) -> UITextField {
-        let textField = UITextField()
-        textField.placeholder = placeholder
-        textField.autocorrectionType = .no
-        textField.borderStyle = .none
-        textField.font = UIFont.systemFont(ofSize: 25)
-        textField.textAlignment = .center
-        return textField
+        let customTF = UITextField()
+        customTF.placeholder = placeholder
+        customTF.autocorrectionType = .no
+        customTF.borderStyle = .none
+        customTF.font = UIFont.systemFont(ofSize: 25)
+        customTF.textAlignment = .center
+        return customTF
     }
 }
