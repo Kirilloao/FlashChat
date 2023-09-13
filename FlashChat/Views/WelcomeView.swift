@@ -9,6 +9,7 @@ import UIKit
 
 final class WelcomeView: UIView {
     
+    
     // MARK: - Properties
     private lazy var mainLabel: UILabel = {
         var mainLabel = UILabel()
@@ -18,12 +19,13 @@ final class WelcomeView: UIView {
         return mainLabel
     }()
     
-    private lazy var logInButton: UIButton = {
+  lazy var logInButton: UIButton = {
         var logButton = createButton(with: "Log In")
+      
         return logButton
     }()
     
-    private lazy var registerButton: UIButton = {
+     lazy var registerButton: UIButton = {
         var registerButton = createButton(with: "Register")
         registerButton.tintColor = UIColor(named: "BrandBlue")
         registerButton.backgroundColor = UIColor(named: "BrandLightBlue")

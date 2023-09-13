@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterView: CustomView {
+final class RegisterView: CustomView {
     
     override init(buttonTitle: String) {
         super.init(frame: .zero)

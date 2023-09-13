@@ -8,7 +8,7 @@
 import UIKit
 
 final class ChatView: UIView {
-
+    
     // MARK: - Private UI Properties
     lazy var chatTableView: UITableView = {
         var tableView = UITableView(frame: self.bounds, style: .grouped)
@@ -38,7 +38,7 @@ final class ChatView: UIView {
         sentButton.tintColor = .white
         return sentButton
     }()
-
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,7 +59,6 @@ final class ChatView: UIView {
         self.addSubview(chatTableView)
         
     }
-    
     
     private func setupConstraints() {
         chatView.snp.makeConstraints { make in
@@ -103,11 +102,8 @@ extension ChatView: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 // MARK: - UITableViewDelegate
 extension ChatView: UITableViewDelegate {
-    
 }

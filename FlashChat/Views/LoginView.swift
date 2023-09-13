@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginView: CustomView {
+final class LoginView: CustomView {
     
     override init(buttonTitle: String) {
         super.init(frame: .zero)

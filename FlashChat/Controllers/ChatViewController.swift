@@ -11,13 +11,12 @@ final class ChatViewController: UIViewController {
     
     // MARK: - Private UI Properties
     private let chatView = ChatView()
-
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(chatView)
         setupConstraints()
-
     }
     
     // MARK: - Private Methods
@@ -26,5 +25,4 @@ final class ChatViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-
 }
