@@ -18,6 +18,7 @@
 		3CE65FCE2AB1A85C00E1F476 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */; };
 		3CE65FD02AB1B7E400E1F476 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FCF2AB1B7E400E1F476 /* LoginViewController.swift */; };
 		3CE65FD22AB1B8FA00E1F476 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FD12AB1B8FA00E1F476 /* CustomView.swift */; };
+		3CE65FD42AB1BB1800E1F476 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FD32AB1BB1800E1F476 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		3CE65FCF2AB1B7E400E1F476 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3CE65FD12AB1B8FA00E1F476 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		3CE65FD32AB1BB1800E1F476 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				3CE65FC92AB1A1EC00E1F476 /* WelcomeView.swift */,
 				3CE65FD12AB1B8FA00E1F476 /* CustomView.swift */,
 				3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */,
+				3CE65FD32AB1BB1800E1F476 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				3CE65FD02AB1B7E400E1F476 /* LoginViewController.swift in Sources */,
 				3CE65FD22AB1B8FA00E1F476 /* CustomView.swift in Sources */,
 				3CE65FB32AB19FAF00E1F476 /* WelcomeViewController.swift in Sources */,
+				3CE65FD42AB1BB1800E1F476 /* LoginView.swift in Sources */,
 				3CE65FCC2AB1A7C500E1F476 /* RegisterViewController.swift in Sources */,
 				3CE65FCA2AB1A1EC00E1F476 /* WelcomeView.swift in Sources */,
 				3CE65FCE2AB1A85C00E1F476 /* RegisterView.swift in Sources */,

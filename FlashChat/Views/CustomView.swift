@@ -32,7 +32,7 @@ class CustomView: UIView {
     
     lazy var registerButton: UIButton = {
         var registerButton = UIButton(type: .system)
-        registerButton.setTitle("Register", for: .normal)
+        registerButton.setTitle("", for: .normal)
         registerButton.tintColor = UIColor(named: "BrandBlue")
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         return registerButton
