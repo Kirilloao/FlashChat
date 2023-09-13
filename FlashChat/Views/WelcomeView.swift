@@ -9,7 +9,6 @@ import UIKit
 
 final class WelcomeView: UIView {
     
-    
     // MARK: - Properties
     private lazy var mainLabel: UILabel = {
         var mainLabel = UILabel()
@@ -21,7 +20,6 @@ final class WelcomeView: UIView {
     
   lazy var logInButton: UIButton = {
         var logButton = createButton(with: "Log In")
-      
         return logButton
     }()
     

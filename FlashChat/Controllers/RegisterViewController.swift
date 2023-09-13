@@ -17,6 +17,15 @@ final class RegisterViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(registerView)
         setupConstraints()
+        setupActionButton()
+
+    }
+    
+    // MARK: - Private Actions
+    @objc private func openVC() {
+        let chatVC = ChatViewController()
+        chatVC.modalPresentationStyle = .fullScreen
+        present(chatVC, animated: true)
     }
     
     // MARK: - Private Methods
@@ -24,5 +33,12 @@ final class RegisterViewController: UIViewController {
         registerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setupActionButton() {
+        registerView.actionButton.addTarget(
+            self,
+            action: #selector(openVC),
+            for: .touchUpInside)
     }
 }

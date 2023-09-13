@@ -25,10 +25,12 @@ final class WelcomeViewController: UIViewController {
     @objc private func openVC(_ sender: UIButton) {
         if sender == mainView.logInButton {
             let logInVC = LoginViewController()
-            present(logInVC, animated: true)
+//            present(logInVC, animated: true)
+            navigationController?.pushViewController(logInVC, animated: true)
         } else {
             let registerVC = RegisterViewController()
-            present(registerVC, animated: true)
+//            present(registerVC, animated: true)
+            navigationController?.pushViewController(registerVC, animated: true)
         }
     }
     

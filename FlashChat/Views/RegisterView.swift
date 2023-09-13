@@ -11,7 +11,7 @@ final class RegisterView: CustomView {
     
     override init(buttonTitle: String) {
         super.init(frame: .zero)
-        registerButton.setTitle(buttonTitle, for: .normal)
+        actionButton.setTitle(buttonTitle, for: .normal)
     }
     
     required init?(coder: NSCoder) {

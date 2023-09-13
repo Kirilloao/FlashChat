@@ -30,7 +30,7 @@ class CustomView: UIView {
         return passwordTF
     }()
     
-    lazy var registerButton: UIButton = {
+    lazy var actionButton: UIButton = {
         var registerButton = UIButton(type: .system)
         registerButton.setTitle("", for: .normal)
         registerButton.tintColor = UIColor(named: "BrandBlue")
@@ -41,7 +41,7 @@ class CustomView: UIView {
     // MARK: - Init
     init(buttonTitle: String) {
         super.init(frame: .zero)
-        registerButton.setTitle(buttonTitle, for: .normal)
+        actionButton.setTitle(buttonTitle, for: .normal)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,12 +60,12 @@ class CustomView: UIView {
         emailView.addSubview(emailTextField)
         self.addSubview(passwordView)
         passwordView.addSubview(passwordTextField)
-        self.addSubview(registerButton)
+        self.addSubview(actionButton)
     }
     
     private func setupConstraints() {
         emailView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(100)
+            make.top.equalTo(self.snp.topMargin)
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
             make.height.equalTo(60)
@@ -92,7 +92,7 @@ class CustomView: UIView {
             make.bottom.equalToSuperview().offset(-5)
         }
         
-        registerButton.snp.makeConstraints { make in
+        actionButton.snp.makeConstraints { make in
             make.top.equalTo(passwordView.snp.bottom).offset(30)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
