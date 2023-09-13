@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainView: UIView {
+final class WelcomeView: UIView {
     
     // MARK: - Properties
     private lazy var mainLabel: UILabel = {
@@ -75,7 +75,5 @@ final class MainView: UIView {
             make.height.equalTo(61)
             make.top.equalTo(registerButton.snp.bottom).offset(8)
         }
-        
-
     }
 }

@@ -13,7 +13,9 @@
 		3CE65FB82AB19FB000E1F476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE65FB72AB19FB000E1F476 /* Assets.xcassets */; };
 		3CE65FBB2AB19FB000E1F476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE65FB92AB19FB000E1F476 /* LaunchScreen.storyboard */; };
 		3CE65FC72AB1A0EB00E1F476 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CE65FC62AB1A0EB00E1F476 /* SnapKit */; };
-		3CE65FCA2AB1A1EC00E1F476 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FC92AB1A1EC00E1F476 /* MainView.swift */; };
+		3CE65FCA2AB1A1EC00E1F476 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FC92AB1A1EC00E1F476 /* WelcomeView.swift */; };
+		3CE65FCC2AB1A7C500E1F476 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FCB2AB1A7C500E1F476 /* RegisterViewController.swift */; };
+		3CE65FCE2AB1A85C00E1F476 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,9 @@
 		3CE65FB72AB19FB000E1F476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CE65FBA2AB19FB000E1F476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CE65FBC2AB19FB000E1F476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CE65FC92AB1A1EC00E1F476 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3CE65FC92AB1A1EC00E1F476 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		3CE65FCB2AB1A7C500E1F476 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				3CE65FB22AB19FAF00E1F476 /* WelcomeViewController.swift */,
+				3CE65FCB2AB1A7C500E1F476 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,7 +101,8 @@
 		3CE65FC82AB1A1C100E1F476 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3CE65FC92AB1A1EC00E1F476 /* MainView.swift */,
+				3CE65FC92AB1A1EC00E1F476 /* WelcomeView.swift */,
+				3CE65FCD2AB1A85C00E1F476 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CE65FB32AB19FAF00E1F476 /* WelcomeViewController.swift in Sources */,
-				3CE65FCA2AB1A1EC00E1F476 /* MainView.swift in Sources */,
+				3CE65FCC2AB1A7C500E1F476 /* RegisterViewController.swift in Sources */,
+				3CE65FCA2AB1A1EC00E1F476 /* WelcomeView.swift in Sources */,
+				3CE65FCE2AB1A85C00E1F476 /* RegisterView.swift in Sources */,
 				3CE65FAF2AB19FAF00E1F476 /* AppDelegate.swift in Sources */,
 				3CE65FB12AB19FAF00E1F476 /* SceneDelegate.swift in Sources */,
 			);

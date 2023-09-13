@@ -11,7 +11,7 @@ import SnapKit
 final class WelcomeViewController: UIViewController {
     
     // MARK: Private UI Properties
-    private let mainView = MainView()
+    private let mainView = WelcomeView()
 
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
