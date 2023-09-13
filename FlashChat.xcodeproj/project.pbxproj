@@ -9,16 +9,17 @@
 /* Begin PBXBuildFile section */
 		3CE65FAF2AB19FAF00E1F476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FAE2AB19FAF00E1F476 /* AppDelegate.swift */; };
 		3CE65FB12AB19FAF00E1F476 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FB02AB19FAF00E1F476 /* SceneDelegate.swift */; };
-		3CE65FB32AB19FAF00E1F476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FB22AB19FAF00E1F476 /* ViewController.swift */; };
+		3CE65FB32AB19FAF00E1F476 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FB22AB19FAF00E1F476 /* WelcomeViewController.swift */; };
 		3CE65FB82AB19FB000E1F476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE65FB72AB19FB000E1F476 /* Assets.xcassets */; };
 		3CE65FBB2AB19FB000E1F476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE65FB92AB19FB000E1F476 /* LaunchScreen.storyboard */; };
+		3CE65FC72AB1A0EB00E1F476 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CE65FC62AB1A0EB00E1F476 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CE65FAB2AB19FAF00E1F476 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE65FAE2AB19FAF00E1F476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CE65FB02AB19FAF00E1F476 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3CE65FB22AB19FAF00E1F476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3CE65FB22AB19FAF00E1F476 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3CE65FB72AB19FB000E1F476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CE65FBA2AB19FB000E1F476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CE65FBC2AB19FB000E1F476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE65FC72AB1A0EB00E1F476 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +56,38 @@
 		3CE65FAD2AB19FAF00E1F476 /* FlashChat */ = {
 			isa = PBXGroup;
 			children = (
-				3CE65FAE2AB19FAF00E1F476 /* AppDelegate.swift */,
-				3CE65FB02AB19FAF00E1F476 /* SceneDelegate.swift */,
-				3CE65FB22AB19FAF00E1F476 /* ViewController.swift */,
-				3CE65FB72AB19FB000E1F476 /* Assets.xcassets */,
-				3CE65FB92AB19FB000E1F476 /* LaunchScreen.storyboard */,
+				3CE65FC32AB1A06100E1F476 /* App */,
+				3CE65FC22AB1A05A00E1F476 /* Controllers */,
+				3CE65FC42AB1A06D00E1F476 /* Resources */,
 				3CE65FBC2AB19FB000E1F476 /* Info.plist */,
 			);
 			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		3CE65FC22AB1A05A00E1F476 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CE65FB22AB19FAF00E1F476 /* WelcomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3CE65FC32AB1A06100E1F476 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3CE65FAE2AB19FAF00E1F476 /* AppDelegate.swift */,
+				3CE65FB02AB19FAF00E1F476 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3CE65FC42AB1A06D00E1F476 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CE65FB92AB19FB000E1F476 /* LaunchScreen.storyboard */,
+				3CE65FB72AB19FB000E1F476 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +106,9 @@
 			dependencies = (
 			);
 			name = FlashChat;
+			packageProductDependencies = (
+				3CE65FC62AB1A0EB00E1F476 /* SnapKit */,
+			);
 			productName = FlashChat;
 			productReference = 3CE65FAB2AB19FAF00E1F476 /* FlashChat.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 3CE65FA22AB19FAF00E1F476;
+			packageReferences = (
+				3CE65FC52AB1A0EB00E1F476 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3CE65FAC2AB19FAF00E1F476 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CE65FB32AB19FAF00E1F476 /* ViewController.swift in Sources */,
+				3CE65FB32AB19FAF00E1F476 /* WelcomeViewController.swift in Sources */,
 				3CE65FAF2AB19FAF00E1F476 /* AppDelegate.swift in Sources */,
 				3CE65FB12AB19FAF00E1F476 /* SceneDelegate.swift in Sources */,
 			);
@@ -344,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3CE65FC52AB1A0EB00E1F476 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CE65FC62AB1A0EB00E1F476 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CE65FC52AB1A0EB00E1F476 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CE65FA32AB19FAF00E1F476 /* Project object */;
 }
