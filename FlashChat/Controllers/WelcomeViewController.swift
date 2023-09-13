@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import SnapKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
+    
+    // MARK: Private UI Properties
+    private let mainView = MainView()
 
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.addSubview(mainView)
+        setupConstraints()
     }
-
-
+    
+    // MARK: - Private Methods
+    private func setupConstraints() {
+        mainView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+    }
 }
 
