@@ -19,6 +19,9 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginView)
         setupConstraints()
         setupActionButton()
+        
+        loginView.emailTextField.text = "www.kirilltaraturin747@gmail.com"
+        loginView.passwordTextField.text = "11223344"
     }
     
     // MARK: - Private Methods

@@ -59,7 +59,7 @@ final class WelcomeViewController: UIViewController {
     
     // анимация добавления символов в label
     private func setupAnimationForMainLabel() {
-        mainView.mainLabel.text = "⚡️FlashChat"
+        mainView.mainLabel.text = K.appName
     }
 }
 

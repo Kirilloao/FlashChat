@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class ChatViewController: UIViewController {
     
@@ -18,11 +19,22 @@ final class ChatViewController: UIViewController {
         view.addSubview(chatView)
         setupConstraints()
         setupNavigationBar()
+        
+        title = K.appName
+        navigationItem.hidesBackButton = true
     }
     
     // MARK: - Private Actions
     @objc private func logOutButtonDidTapped() {
-        
+        do {
+            try Auth.auth().signOut()
+            
+            if let welcomeViewController = navigationController?.viewControllers.first(where: { $0 is WelcomeViewController }) {
+                navigationController?.popToViewController(welcomeViewController, animated: true)
+            }
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
     // MARK: - Private Methods

@@ -32,8 +32,6 @@ final class RegisterViewController: UIViewController {
                     print(newError.localizedDescription)
                 } else {
                     let chatVC = ChatViewController()
-//                    chatVC.modalPresentationStyle = .fullScreen
-//                    self.present(chatVC, animated: true)
                     self?.navigationController?.pushViewController(chatVC, animated: true)
                 }
             }
