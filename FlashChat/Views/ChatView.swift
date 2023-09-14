@@ -19,9 +19,12 @@ final class ChatView: UIView {
     // MARK: - Private UI Properties
     lazy var chatTableView: UITableView = {
         var tableView = UITableView(frame: self.bounds, style: .grouped)
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -50,6 +53,7 @@ final class ChatView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(named: "BrandPurple")
+        
         addViews()
         setupConstraints()
     }
@@ -90,8 +94,7 @@ final class ChatView: UIView {
         }
         
         chatTableView.snp.makeConstraints { make in
-//            make.top.equalTo(self.snp.topMargin)
-            make.top.equalToSuperview()
+            make.top.equalTo(self.snp.topMargin)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalTo(chatView.snp.top)
@@ -106,18 +109,16 @@ extension ChatView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard
+            let cell = chatTableView.dequeueReusableCell(
+                withIdentifier: K.cellIdentifier,
+                for: indexPath) as? MessageCell
+        else {
+            return UITableViewCell()
+        }
         
-        var content = cell.defaultContentConfiguration()
-        
-        content.text = "This is a cell"
-        
-        cell.contentConfiguration = content
+        cell.label.text = messages[indexPath.row].body
         
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-extension ChatView: UITableViewDelegate {
 }
