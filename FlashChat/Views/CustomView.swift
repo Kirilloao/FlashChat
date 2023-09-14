@@ -15,8 +15,9 @@ class CustomView: UIView {
         return emailView
     }()
     
-    private lazy var emailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         var emailTF = createTextField(with: "Email")
+        emailTF.autocapitalizationType = .none
         return emailTF
     }()
     
@@ -25,9 +26,20 @@ class CustomView: UIView {
         return passwordView
     }()
     
-    private lazy var passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         var passwordTF = createTextField(with: "Password")
+        passwordTF.isSecureTextEntry = true
+        
         return passwordTF
+    }()
+    
+    lazy var errorLabel: UILabel = {
+        var errorLabel = UILabel()
+        errorLabel.textColor = .systemRed
+        errorLabel.isHidden = true
+        errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .center
+        return errorLabel
     }()
     
     lazy var actionButton: UIButton = {
@@ -60,6 +72,7 @@ class CustomView: UIView {
         emailView.addSubview(emailTextField)
         self.addSubview(passwordView)
         passwordView.addSubview(passwordTextField)
+        self.addSubview(errorLabel)
         self.addSubview(actionButton)
     }
     
@@ -92,8 +105,14 @@ class CustomView: UIView {
             make.bottom.equalToSuperview().offset(-5)
         }
         
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordView.snp.bottom).offset(10)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+        
         actionButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordView.snp.bottom).offset(30)
+            make.top.equalTo(passwordView.snp.bottom).offset(60)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.height.equalTo(40)

@@ -6,24 +6,24 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 final class WelcomeView: UIView {
     
     // MARK: - Properties
-    private lazy var mainLabel: UILabel = {
-        var mainLabel = UILabel()
-        mainLabel.text = "⚡️FlashChat"
+    lazy var mainLabel: CLTypingLabel = {
+        var mainLabel = CLTypingLabel()
         mainLabel.textColor = UIColor(named: "BrandBlue")
         mainLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 50)
         return mainLabel
     }()
     
-  lazy var logInButton: UIButton = {
+    lazy var logInButton: UIButton = {
         var logButton = createButton(with: "Log In")
         return logButton
     }()
     
-     lazy var registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         var registerButton = createButton(with: "Register")
         registerButton.tintColor = UIColor(named: "BrandBlue")
         registerButton.backgroundColor = UIColor(named: "BrandLightBlue")

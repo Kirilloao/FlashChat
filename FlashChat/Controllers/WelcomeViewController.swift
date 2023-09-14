@@ -19,6 +19,7 @@ final class WelcomeViewController: UIViewController {
         view.addSubview(mainView)
         setupConstraints()
         setupButtons()
+        setupAnimationForMainLabel()
     }
     
     // MARK: - Private Actions
@@ -54,6 +55,11 @@ final class WelcomeViewController: UIViewController {
             action: #selector(openVC(_:)),
             for: .touchUpInside
         )
+    }
+    
+    // анимация добавления символов в label
+    private func setupAnimationForMainLabel() {
+        mainView.mainLabel.text = "⚡️FlashChat"
     }
 }
 

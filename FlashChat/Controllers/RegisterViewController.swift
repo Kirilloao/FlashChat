@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class RegisterViewController: UIViewController {
     
@@ -18,14 +19,26 @@ final class RegisterViewController: UIViewController {
         view.addSubview(registerView)
         setupConstraints()
         setupActionButton()
-
+        
     }
     
     // MARK: - Private Actions
     @objc private func openVC() {
-        let chatVC = ChatViewController()
-        chatVC.modalPresentationStyle = .fullScreen
-        present(chatVC, animated: true)
+        if let email = registerView.emailTextField.text, let password = registerView.passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+                if let newError = error {
+                    self?.registerView.errorLabel.text = newError.localizedDescription
+                    self?.registerView.errorLabel.isHidden = false
+                    print(newError.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+//                    chatVC.modalPresentationStyle = .fullScreen
+//                    self.present(chatVC, animated: true)
+                    self?.navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
+            
+        }
     }
     
     // MARK: - Private Methods
