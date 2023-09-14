@@ -9,6 +9,13 @@ import UIKit
 
 final class ChatView: UIView {
     
+    // MARK: - Public Properties
+    var messages: [Message] = [
+        Message(sender: "www.kirilltaraturin747@gmail.com", body: "Hey!"),
+        Message(sender: "123@mail.com", body: "Hello!"),
+        Message(sender: "456@mail.com", body: "What's up?")
+    ]
+    
     // MARK: - Private UI Properties
     lazy var chatTableView: UITableView = {
         var tableView = UITableView(frame: self.bounds, style: .grouped)
@@ -83,7 +90,8 @@ final class ChatView: UIView {
         }
         
         chatTableView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin)
+//            make.top.equalTo(self.snp.topMargin)
+            make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalTo(chatView.snp.top)
@@ -94,11 +102,17 @@ final class ChatView: UIView {
 // MARK: - UITableViewDataSource
 extension ChatView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        
+        content.text = "This is a cell"
+        
+        cell.contentConfiguration = content
         
         return cell
     }
