@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class LoginViewController: UIViewController {
     
@@ -17,6 +18,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(loginView)
         setupConstraints()
+        setupActionButton()
     }
     
     // MARK: - Private Methods
@@ -24,6 +26,33 @@ final class LoginViewController: UIViewController {
         loginView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setupActionButton() {
+        loginView.actionButton.addTarget(
+            self,
+            action: #selector(openVC),
+            for: .touchUpInside)
+    }
+    
+    // MARK: - Private Actions
+    @objc private func openVC() {
+        
+
+        
+        if let email = loginView.emailTextField.text, let password = loginView.passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                if let newError = error {
+                    self?.loginView.errorLabel.text = newError.localizedDescription
+                    self?.loginView.errorLabel.isHidden = false
+                    print(newError)
+                } else {
+                    let chatVC = ChatViewController()
+                    self?.navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
+        }
+    
     }
     
 }

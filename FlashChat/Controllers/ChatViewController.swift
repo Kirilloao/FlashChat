@@ -17,6 +17,12 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(chatView)
         setupConstraints()
+        setupNavigationBar()
+    }
+    
+    // MARK: - Private Actions
+    @objc private func logOutButtonDidTapped() {
+        
     }
     
     // MARK: - Private Methods
@@ -24,5 +30,15 @@ final class ChatViewController: UIViewController {
         chatView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setupNavigationBar() {
+        let logOutButton = UIBarButtonItem(
+            title: "LogOut",
+            style: .done,
+            target: self,
+            action: #selector(logOutButtonDidTapped))
+        
+        navigationItem.rightBarButtonItem = logOutButton
     }
 }
