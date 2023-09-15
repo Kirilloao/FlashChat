@@ -54,15 +54,9 @@ final class ChatViewController: UIViewController {
                     print("Successfuly saved data")
                     //очищаем textField после сохранения сообщения
                     self.chatView.chatTextField.text = ""
-                    
-                    // прокручиваем tableView к последнему добавленному элементу
-                    let newIndex = self.chatView.messages.count
-                    let indexPath = IndexPath(row: newIndex - 1, section: 0)
-                    self.chatView.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                 }
             }
         }
-     
     }
     
     // MARK: - Private Methods
@@ -86,8 +80,16 @@ final class ChatViewController: UIViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.chatView.chatTableView.reloadData()
+                                    
+                                    // прокручиваем tableView к последнему добавленному элементу
+                                    let lastIndex = self.chatView.messages.count - 1
+                                    let indexPath = IndexPath(row: lastIndex, section: 0)
+                                    self.chatView.chatTableView.scrollToRow(
+                                        at: indexPath,
+                                        at: .top,
+                                        animated: false
+                                    )
                                 }
-                                
                             }
                         }
                     }
@@ -113,6 +115,7 @@ final class ChatViewController: UIViewController {
             action: #selector(logOutButtonDidTapped))
         
         navigationItem.rightBarButtonItem = logOutButton
+        navigationItem.rightBarButtonItem?.tintColor = .white
     }
     
     // добавляем target для кнопки

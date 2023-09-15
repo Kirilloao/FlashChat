@@ -13,6 +13,7 @@ final class MessageCell: UITableViewCell {
     @IBOutlet var messageBubble: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var rightImageView: UIImageView!
+    @IBOutlet var leftImageView: UIImageView!
     
     // MARK: - Override Methods
     override func awakeFromNib() {
@@ -22,8 +23,5 @@ final class MessageCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

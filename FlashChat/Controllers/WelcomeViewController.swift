@@ -20,17 +20,39 @@ final class WelcomeViewController: UIViewController {
         setupConstraints()
         setupButtons()
         setupAnimationForMainLabel()
+        
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        
+        //устанавливаем цвет для navigationBar
+        navBarAppearance.backgroundColor = UIColor(named: K.BrandColors.blue)
+        
+        // меняем цвет для текста
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        // меняем цвет в статичном положении и в скролинге
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: - Private Actions
     @objc private func openVC(_ sender: UIButton) {
         if sender == mainView.logInButton {
             let logInVC = LoginViewController()
-            //            present(logInVC, animated: true)
             navigationController?.pushViewController(logInVC, animated: true)
         } else {
             let registerVC = RegisterViewController()
-            //            present(registerVC, animated: true)
             navigationController?.pushViewController(registerVC, animated: true)
         }
     }

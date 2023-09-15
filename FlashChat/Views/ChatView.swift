@@ -6,27 +6,26 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 final class ChatView: UIView {
     
     // MARK: - Public Properties
     var messages: [Message] = []
     
-    // MARK: - Private UI Properties
+    // MARK: - Public UI Properties
     lazy var chatTableView: UITableView = {
         var tableView = UITableView(frame: self.bounds, style: .grouped)
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.register(
+            UINib(nibName: K.cellNibName, bundle: nil),
+            forCellReuseIdentifier: K.cellIdentifier
+        )
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.allowsSelection = false
         return tableView
-    }()
-    
-    private lazy var chatView: UIView = {
-        var chatView = UIView()
-        return chatView
     }()
     
     lazy var chatTextField: UITextField = {
@@ -43,6 +42,12 @@ final class ChatView: UIView {
         sentButton.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
         sentButton.tintColor = .white
         return sentButton
+    }()
+    
+    // MARK: - Private UI Properties
+    private lazy var chatView: UIView = {
+        var chatView = UIView()
+        return chatView
     }()
     
     // MARK: - Init
@@ -90,7 +95,7 @@ final class ChatView: UIView {
         }
         
         chatTableView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin)
+            make.top.equalTo(self.snp.topMargin).offset(-8)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalTo(chatView.snp.top)
@@ -105,6 +110,9 @@ extension ChatView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message = messages[indexPath.row]
+        
         guard
             let cell = chatTableView.dequeueReusableCell(
                 withIdentifier: K.cellIdentifier,
@@ -113,8 +121,22 @@ extension ChatView: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.label.text = messages[indexPath.row].body
+        cell.label.text = message.body
         
+        // сообщение от текущего пользователя
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
+            cell.label.textColor = UIColor(named: K.BrandColors.purple)
+        }
+        // сообщегние от другого пользователя
+        else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
+            cell.label.textColor = UIColor(named: K.BrandColors.lightPurple)
+        }
         return cell
     }
 }

@@ -8,22 +8,12 @@
 import UIKit
 
 class CustomView: UIView {
-
-    // MARK: - Private UI Properties
-    private lazy var emailView: UIView = {
-        var emailView = createView()
-        return emailView
-    }()
     
+    // MARK: - Public UI Properties
     lazy var emailTextField: UITextField = {
         var emailTF = createTextField(with: "Email")
         emailTF.autocapitalizationType = .none
         return emailTF
-    }()
-    
-    private lazy var passwordView: UIView = {
-        var passwordView = createView()
-        return passwordView
     }()
     
     lazy var passwordTextField: UITextField = {
@@ -48,6 +38,17 @@ class CustomView: UIView {
         registerButton.tintColor = UIColor(named: "BrandBlue")
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         return registerButton
+    }()
+    
+    // MARK: - Private UI Properties
+    private lazy var emailView: UIView = {
+        var emailView = createView()
+        return emailView
+    }()
+    
+    private lazy var passwordView: UIView = {
+        var passwordView = createView()
+        return passwordView
     }()
     
     // MARK: - Init
@@ -78,7 +79,7 @@ class CustomView: UIView {
     
     private func setupConstraints() {
         emailView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin)
+            make.top.equalTo(self.snp.topMargin).offset(30)
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
             make.height.equalTo(60)

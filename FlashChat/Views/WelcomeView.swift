@@ -10,7 +10,7 @@ import CLTypingLabel
 
 final class WelcomeView: UIView {
     
-    // MARK: - Properties
+    // MARK: - Public UI Properties
     lazy var mainLabel: CLTypingLabel = {
         var mainLabel = CLTypingLabel()
         mainLabel.textColor = UIColor(named: "BrandBlue")
