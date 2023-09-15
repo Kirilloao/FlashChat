@@ -40,9 +40,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Private Actions
     @objc private func openVC() {
-        
-
-        
+        // проверям есть ли такой логин и пароль на сервере, если да, то делаем переход
         if let email = loginView.emailTextField.text, let password = loginView.passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 if let newError = error {
@@ -55,7 +53,5 @@ final class LoginViewController: UIViewController {
                 }
             }
         }
-    
     }
-    
 }

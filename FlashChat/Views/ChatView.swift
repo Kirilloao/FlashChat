@@ -33,7 +33,7 @@ final class ChatView: UIView {
         return chatView
     }()
     
-    private lazy var chatTextField: UITextField = {
+    lazy var chatTextField: UITextField = {
         var chatTF = UITextField()
         chatTF.placeholder = "Write a message..."
         chatTF.font = UIFont.systemFont(ofSize: 14)
@@ -42,7 +42,7 @@ final class ChatView: UIView {
         return chatTF
     }()
     
-    private lazy var sentButton: UIButton = {
+    lazy var sendButton: UIButton = {
         var sentButton = UIButton(type: .system)
         sentButton.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
         sentButton.tintColor = .white
@@ -66,7 +66,7 @@ final class ChatView: UIView {
     private func addViews() {
         self.addSubview(chatView)
         chatView.addSubview(chatTextField)
-        chatView.addSubview(sentButton)
+        chatView.addSubview(sendButton)
         self.addSubview(chatTableView)
         
     }
@@ -79,7 +79,7 @@ final class ChatView: UIView {
             make.right.equalToSuperview()
         }
         
-        sentButton.snp.makeConstraints { make in
+        sendButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(40)
             make.right.equalToSuperview().offset(-20)
@@ -90,7 +90,7 @@ final class ChatView: UIView {
             make.height.equalTo(40)
             make.left.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(20)
-            make.right.equalTo(sentButton.snp.left).offset(-20)
+            make.right.equalTo(sendButton.snp.left).offset(-20)
         }
         
         chatTableView.snp.makeConstraints { make in
