@@ -9,6 +9,7 @@ import UIKit
 
 final class RegisterView: CustomView {
     
+    // MARK: - Init
     override init(buttonTitle: String) {
         super.init(frame: .zero)
         actionButton.setTitle(buttonTitle, for: .normal)

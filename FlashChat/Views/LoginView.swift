@@ -9,6 +9,7 @@ import UIKit
 
 final class LoginView: CustomView {
     
+    // MARK: - Init
     override init(buttonTitle: String) {
         super.init(frame: .zero)
         actionButton.setTitle(buttonTitle, for: .normal)

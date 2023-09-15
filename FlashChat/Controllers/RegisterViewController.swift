@@ -19,11 +19,11 @@ final class RegisterViewController: UIViewController {
         view.addSubview(registerView)
         setupConstraints()
         setupActionButton()
-        
     }
     
     // MARK: - Private Actions
     @objc private func openVC() {
+        // регистрируем пользователя на основе введеных им данных и переходим на экран чата
         if let email = registerView.emailTextField.text, let password = registerView.passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
                 if let newError = error {
@@ -35,7 +35,6 @@ final class RegisterViewController: UIViewController {
                     self?.navigationController?.pushViewController(chatVC, animated: true)
                 }
             }
-            
         }
     }
     
@@ -50,6 +49,7 @@ final class RegisterViewController: UIViewController {
         registerView.actionButton.addTarget(
             self,
             action: #selector(openVC),
-            for: .touchUpInside)
+            for: .touchUpInside
+        )
     }
 }
