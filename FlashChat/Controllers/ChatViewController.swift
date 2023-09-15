@@ -24,6 +24,7 @@ final class ChatViewController: UIViewController {
         setupConstraints()
         setupNavigationBar()
         setupSendButton()
+        loadMessages()
     }
     
     // MARK: - Private Actions
@@ -44,19 +45,54 @@ final class ChatViewController: UIViewController {
         if let messageBody = chatView.chatTextField.text,  let messageSender = Auth.auth().currentUser?.email {
             db.collection(K.FStore.collectionName).addDocument(data: [
                 K.FStore.senderField: messageSender,
-                K.FStore.bodyField: messageBody]) { error in
-                    if let newError = error {
-                        print(newError)
-                    } else {
-                        print("Successfuly saved data")
-                    }
+                K.FStore.bodyField: messageBody,
+                K.FStore.dateField: Date().timeIntervalSince1970
+            ]) { error in
+                if let newError = error {
+                    print(newError)
+                } else {
+                    print("Successfuly saved data")
+                    //очищаем textField после сохранения сообщения
+                    self.chatView.chatTextField.text = ""
+                    
+                    // прокручиваем tableView к последнему добавленному элементу
+                    let newIndex = self.chatView.messages.count
+                    let indexPath = IndexPath(row: newIndex - 1, section: 0)
+                    self.chatView.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                 }
+            }
         }
+     
     }
     
     // MARK: - Private Methods
     private func loadMessages() {
-        
+        //загружаем сообщения с сервера и добавляем их в массив из которого обновляется tableView
+        db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
+                
+                self.chatView.messages = []
+                if let newError = error {
+                    
+                    print("Tehre was an issue retrieving data from Firestore. \(newError)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
+                                let newMessage = Message(sender: messageSender, body: messageBody)
+                                self.chatView.messages.append(newMessage)
+                                
+                                DispatchQueue.main.async {
+                                    self.chatView.chatTableView.reloadData()
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
     }
     
     // установка констрейнтов

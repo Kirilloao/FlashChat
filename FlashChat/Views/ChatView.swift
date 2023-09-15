@@ -10,11 +10,7 @@ import UIKit
 final class ChatView: UIView {
     
     // MARK: - Public Properties
-    var messages: [Message] = [
-        Message(sender: "www.kirilltaraturin747@gmail.com", body: "Hey!"),
-        Message(sender: "123@mail.com", body: "Hello!"),
-        Message(sender: "456@mail.com", body: "What's up?")
-    ]
+    var messages: [Message] = []
     
     // MARK: - Private UI Properties
     lazy var chatTableView: UITableView = {

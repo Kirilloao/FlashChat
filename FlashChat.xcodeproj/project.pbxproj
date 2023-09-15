@@ -26,6 +26,7 @@
 		3CE65FDF2AB32B3600E1F476 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FDE2AB32B3600E1F476 /* Message.swift */; };
 		3CE65FE32AB35D7600E1F476 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE65FE12AB35D7600E1F476 /* MessageCell.swift */; };
 		3CE65FE42AB35D7600E1F476 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CE65FE22AB35D7600E1F476 /* MessageCell.xib */; };
+		3CE65FE72AB46CEC00E1F476 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3CE65FE62AB46CEC00E1F476 /* IQKeyboardManagerSwift */; };
 		B91AD6EA471ABAA5DFACE669 /* Pods_FlashChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BC44A787C567C8BF7E332E /* Pods_FlashChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 			files = (
 				3CE65FC72AB1A0EB00E1F476 /* SnapKit in Frameworks */,
 				B91AD6EA471ABAA5DFACE669 /* Pods_FlashChat.framework in Frameworks */,
+				3CE65FE72AB46CEC00E1F476 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +99,8 @@
 		3CE65FAD2AB19FAF00E1F476 /* FlashChat */ = {
 			isa = PBXGroup;
 			children = (
-				3CE65FDD2AB32B2700E1F476 /* Models */,
 				3CE65FC32AB1A06100E1F476 /* App */,
+				3CE65FDD2AB32B2700E1F476 /* Models */,
 				3CE65FC82AB1A1C100E1F476 /* Views */,
 				3CE65FC22AB1A05A00E1F476 /* Controllers */,
 				3CE65FC42AB1A06D00E1F476 /* Resources */,
@@ -197,6 +199,7 @@
 			name = FlashChat;
 			packageProductDependencies = (
 				3CE65FC62AB1A0EB00E1F476 /* SnapKit */,
+				3CE65FE62AB46CEC00E1F476 /* IQKeyboardManagerSwift */,
 			);
 			productName = FlashChat;
 			productReference = 3CE65FAB2AB19FAF00E1F476 /* FlashChat.app */;
@@ -228,6 +231,7 @@
 			mainGroup = 3CE65FA22AB19FAF00E1F476;
 			packageReferences = (
 				3CE65FC52AB1A0EB00E1F476 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3CE65FE52AB46CEC00E1F476 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 3CE65FAC2AB19FAF00E1F476 /* Products */;
 			projectDirPath = "";
@@ -532,6 +536,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3CE65FE52AB46CEC00E1F476 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -539,6 +551,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3CE65FC52AB1A0EB00E1F476 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		3CE65FE62AB46CEC00E1F476 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CE65FE52AB46CEC00E1F476 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
