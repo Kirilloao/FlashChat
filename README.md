@@ -4,7 +4,8 @@
 
 2. **Lesson**: Section 15
 
-3. **UIKit**,
+3.  **UIKit**,
+    **MVC**,
     **Code**,
     **Xib**,
     **SnapKit(SwiftPackManager)**,
