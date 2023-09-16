@@ -69,7 +69,6 @@ final class ChatView: UIView {
         chatView.addSubview(chatTextField)
         chatView.addSubview(sendButton)
         self.addSubview(chatTableView)
-        
     }
     
     private func setupConstraints() {

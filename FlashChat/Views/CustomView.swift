@@ -19,7 +19,6 @@ class CustomView: UIView {
     lazy var passwordTextField: UITextField = {
         var passwordTF = createTextField(with: "Password")
         passwordTF.isSecureTextEntry = true
-        
         return passwordTF
     }()
     

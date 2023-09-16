@@ -20,20 +20,7 @@ final class WelcomeViewController: UIViewController {
         setupConstraints()
         setupButtons()
         setupAnimationForMainLabel()
-        
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        //устанавливаем цвет для navigationBar
-        navBarAppearance.backgroundColor = UIColor(named: K.BrandColors.blue)
-        
-        // меняем цвет для текста
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        // меняем цвет в статичном положении и в скролинге
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +29,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillDisappear(true)
         navigationController?.isNavigationBarHidden = false
     }
     
@@ -82,6 +69,21 @@ final class WelcomeViewController: UIViewController {
     // анимация добавления символов в label
     private func setupAnimationForMainLabel() {
         mainView.mainLabel.text = K.appName
+    }
+    
+    private func setupNavigationBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        
+        //устанавливаем цвет для navigationBar
+        navBarAppearance.backgroundColor = UIColor(named: K.BrandColors.blue)
+        
+        // меняем цвет для текста
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        // меняем цвет в статичном положении и в скролинге
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
 }
 
