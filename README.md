@@ -4,7 +4,12 @@
 
 2. **Lesson**: Section 15
 
-3. **UIKit, Code, Xib, SnapKit(SwiftPackManager), Firebase(Cocoapods), IQKetboardManagerSwift(SwiftPackManager)**
+3. **UIKit**,
+    **Code**,
+    **Xib**,
+    **SnapKit(SwiftPackManager)**,
+    **Firebase(Cocoapods)**,
+    **IQKetboardManagerSwift(SwiftPackManager)**
 
    
 ![Screenshot 2023-09-16 at 11 34 01](https://github.com/Kirilloao/FlashChat/assets/106522858/fbf4033c-84b3-4e34-bc81-c47608167a48)
